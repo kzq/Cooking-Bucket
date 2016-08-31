@@ -1,18 +1,38 @@
-var cookingBucket = angular.module('cookingBucket');
+var app = angular.module('cookingBucket',['ngRoute']);
 
-cookingBucket.cofig(function ($routeProvide){
+app.config(function ($routeProvider){
     $routeProvider
+      .when('/', {
+          controller: 'MealsCtrl',
+          templateUrl: 'partials/meals.html'
+      })
       .when('/meals', {
-          controller: 'mealCtrl',
-          templateurl: 'partials/meals.html'
+          controller: 'MealsCtrl',
+          templateUrl: 'partials/meals.html'
       })
       .when('/dailyCookings',{
-          controller: 'dailyCookingCtrl',
+          controller: 'DailyCookingCtrl',
           templateUrl: 'partials/dailyCookings.html'
       })
       .when('/mealsoftheday/:dayId',{
-          controller: 'dayMealCtrl',
+          controller: 'DayMealCtrl',
           templateUrl: 'partials/dayMeals.html'
       })
-      .otherwise({redirectTo: '/meals'});
+      .otherwise({ redirectTo: '/meals' });
 });
+
+
+app.run([
+  '$rootScope',
+  function($rootScope) {
+    // see what's going on when the route tries to change
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+      // next is an object that is the route that we are starting to go to
+      // current is an object that is the route where we are currently
+      var currentPath = current.originalPath;
+      var nextPath = next.originalPath;
+
+      console.log('Starting to leave %s to go to %s', currentPath, nextPath);
+    });
+  }
+]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html ng-app="cookingBucket">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +14,15 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#/">
           <img style="float:left;margin-top:-15px" src="assets/images/bucket.png" alt="logo">
             &nbsp;&nbsp;&nbsp;<b>Cooking Bucket</b>
         </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Meals</a></li>
-          <li><a href="#">Daily Cooking</a></li>
+        <ul class="nav navbar-nav" ng-controller="MenuCtrl">
+          <li ng-class="{'active':isActive('/meals')}"><a href="#/meals">Meals</a></li>
+          <li ng-class="{'active':isActivate('/dailycookings')}"><a href="#/dailycookings">Daily Cookings</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -38,16 +38,18 @@
   </div>
        
   <!-- Vendor Libs -->
-  <script src="assets/js/jquery-3.1.0.min.js"></script>
   <script src="assets/js/angular.min.js"></script>
-
+  <script src="assets/js/angular-route.min.js"></script>
+  <script src="assets/js/jquery-3.1.0.min.js"></script>
+  
   <!-- UI Libs -->
   <script src="assets/js/tether.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
 
   <!-- App Libs -->
-  <script src="app/app.module.js"></script>
-  <script src="app/app.routes.js"></script>
-	
+  <script src="app/app.js"></script>
+  <script src="app/controllers/controllers.js"></script>
+  <script src="app/controllers/meals/MealsCtrl.js"></script>
+  
 </body>			
 </html>
