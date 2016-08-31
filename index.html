@@ -1,54 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head nga-app>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cooking Bucket</title>
-    <link href="assets/css/tether.min.css" rel="stylesheet">	
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/app.css" rel="stylesheet" />-
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooking Bucket</title>
+  <link href="assets/css/tether.min.css" rel="stylesheet">	
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/app.css" rel="stylesheet" />-
 </head>
-
 <body>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-          	<img style="float:left;margin-top:-15px" src="assets/images/bucket.png" alt="logo">
-          	&nbsp;&nbsp;&nbsp;<b>Cooking Bucket</b>
-          </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Meals</a></li>
-            <li><a href="#">Daily Cooking</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img style="float:left;margin-top:-15px" src="assets/images/bucket.png" alt="logo">
+            &nbsp;&nbsp;&nbsp;<b>Cooking Bucket</b>
+        </a>
       </div>
-    </nav>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Meals</a></li>
+          <li><a href="#">Daily Cooking</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
 
-    <!-- Begin page content -->
-    <div class="container" ng-init="names=['Dave','Napur','Heedy','Shriva']">
+  <!-- Begin page content -->
+  <div class="container" ng-init="names=['Dave','Napur','Heedy','Shriva']">
     <h3>Looping with the ng-repeat Directive</h3>
     <h4>Data to loop through is initialized using ng-init</h4>
     <ul>
         <li ng-repeat="name in names">{{name}}</li>
     </ul>
-</div>
+  </div>
        
-<!-- Vendor Libs -->
-<script src="assets/js/jquery-3.1.0.min.js"></script>
-<script src="assets/js/angular.min.js"></script>
+  <!-- Vendor Libs -->
+  <script src="assets/js/jquery-3.1.0.min.js"></script>
+  <script src="assets/js/angular.min.js"></script>
 
-<!-- UI Libs -->
-<script src="assets/js/tether.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+  <!-- UI Libs -->
+  <script src="assets/js/tether.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 
-<!-- App Libs -->
-<script src="app/app.module.js"></script>
-<script src="app/app.routes.js"></script>
+  <!-- App Libs -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.routes.js"></script>
 	
 </body>			
 </html>
