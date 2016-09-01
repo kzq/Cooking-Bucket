@@ -1,0 +1,19 @@
+﻿<div ng-controller="MealsCtrl">
+    <div class="container">
+        <header>
+            <h3>Daily Meals</h3>
+        </header>
+        <div ng-repeat="day in days">
+            <div ng-repeat="meal in meals | filter: {day:day}">
+                <div class="container">
+                    <header>
+                        <h3>{{meal.day}} Meals</h3>
+                    </header>
+                    <div class="row">
+                        <div ng-include="'partials/mealsTable.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

@@ -6,10 +6,10 @@
             <h4 class="card-title">{{day}}</h4>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" ng-repeat="meal in meals | filter: {day:day} | limitTo:3 as filtered">{{meal.name}}</li>
+            <li class="list-group-item" ng-repeat="meal in meals | filter: {day:day} | orderBy: '-id' | limitTo:3 as filtered">{{meal.name}}</li>
           </ul>
           <div class="card-block">
-            <a href="#" class="card-link cardBody btn-link">View all {{(meals | filter: {day:day}).length}} meals</a>
+            <a href="#/mealsoftheday/{{day}}" class="card-link cardBody btn-link">View all {{(meals | filter: {day:day}).length}} meals</a>
           </div>
         </div>
      </div> 

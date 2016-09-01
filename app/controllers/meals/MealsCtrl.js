@@ -7,9 +7,13 @@ app.controller('MealsCtrl',function($scope,mealsService){
     
     function init(){
         $scope.meals = mealsService.getMeals();
+        $scope.totalMeals = $scope.meals.length;
     };
    
-    //$scope.addMeal();
+    $scope.addMeal = function(){
+       mealsService.insertMeal($scope.newMeal.name,$scope.newMeal.type,$scope.newMeal.day);
+       $scope.newMeal.name='',$scope.newMeal.type='',$scope.newMeal.day=''; 
+    };
     //$scope.getMeal();
     
 });

@@ -6,12 +6,12 @@ app.config(function ($routeProvider){
           controller: 'MealsCtrl',
           templateUrl: 'partials/meals.html'
       })
-      .when('/dailyCookings',{
-          controller: 'DailyCookingCtrl',
+      .when('/dailycookings',{
+          controller: 'MealsCtrl',
           templateUrl: 'partials/dailyCookings.html'
       })
-      .when('/mealsoftheday/:dayId',{
-          controller: 'DayMealCtrl',
+      .when('/mealsoftheday/:day',{
+          controller: 'DayMealsCtrl',
           templateUrl: 'partials/dayMeals.html'
       })
       .otherwise({ redirectTo: '/meals' });

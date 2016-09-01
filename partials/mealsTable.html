@@ -1,0 +1,28 @@
+﻿<table class="table table-hover table-striped table-condensed table-bordered ordersTable">
+    <thead>
+        <tr>
+            <th>Dish Name</th>
+            <th>Meal Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="meals || meals.length > 0" class="error">
+            <td colspan="4">
+                <div class="text-center"><strong>No meals found</strong></div>
+            </td>
+        </tr>
+        <tr ng-repeat="meal in meals | orderBy:type:reverse">
+            <td>
+                {{ meal.name }}
+            </td>
+            <td>
+                {{ meal.type }}
+            </td>
+        </tr>
+        <tr class="info">
+            <td colspan="2">
+                Total meals: <strong>{{ totalMeals | number }}</strong>
+            </td>
+       </tr>
+    </tbody>
+</table>
