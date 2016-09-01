@@ -14,6 +14,10 @@ app.controller('MealsCtrl',function($scope,mealsService){
        mealsService.insertMeal($scope.newMeal.name,$scope.newMeal.type,$scope.newMeal.day);
        $scope.newMeal.name='',$scope.newMeal.type='',$scope.newMeal.day=''; 
     };
-    //$scope.getMeal();
+    
+    $scope.getDayMeal = function(day){
+    	$scope.meals = mealsService.getDayMeals(day);
+        $scope.totalMeals = $scope.meals.length;
+    };
     
 });

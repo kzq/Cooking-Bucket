@@ -5,7 +5,7 @@ app.controller('DayMealsCtrl',function($scope,$routeParams,mealsService){
     function init(){
         $scope.day = ($routeParams.day) ? $routeParams.day : 'Monday';
         $scope.meals = mealsService.getDayMeals($scope.day);
-        $scope.totalMeals = $scope.meals.length;
+        $scope.totalMeals = $scope.meals.length;	
     };
     
 });
