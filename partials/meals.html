@@ -1,11 +1,17 @@
-<div ng-view="view">
-    
-    
-    <div class="container">
-        <header>
-            <h3>Customers</h3>
-        </header>
-        
-    </div>
-  
+<div class="container" ng-controller="MealsCtrl">
+  <div class="row">
+    <div class="col-md-3" ng-repeat="day in days">
+        <div class="card">
+          <div class="card-block cardHeader">
+            <h4 class="card-title">{{day}}</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="meal in meals | filter: {day:day} | limitTo:3 as filtered">{{meal.name}}</li>
+          </ul>
+          <div class="card-block">
+            <a href="#" class="card-link cardBody btn-link">View all {{(meals | filter: {day:day}).length}} meals</a>
+          </div>
+        </div>
+     </div> 
+  </div>
 </div>

@@ -7,7 +7,7 @@
   <title>Cooking Bucket</title>
   <link href="assets/css/tether.min.css" rel="stylesheet">	
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/app.css" rel="stylesheet" />-
+  <link href="assets/css/app.css" rel="stylesheet" />
 </head>
 <body>
   <!-- Fixed navbar -->
@@ -29,14 +29,12 @@
   </nav>
 
   <!-- Begin page content -->
-  <div class="container" ng-init="names=['Dave','Napur','Heedy','Shriva']">
-    <h3>Looping with the ng-repeat Directive</h3>
-    <h4>Data to loop through is initialized using ng-init</h4>
-    <ul>
-        <li ng-repeat="name in names">{{name}}</li>
-    </ul>
+  <div class="container">
+    <div ng-include="'partials/addMeals.html'"></div>
   </div>
-       
+  <br/><br/>
+  <div ng-view>
+  </div> 
   <!-- Vendor Libs -->
   <script src="assets/js/angular.min.js"></script>
   <script src="assets/js/angular-route.min.js"></script>
@@ -50,6 +48,7 @@
   <script src="app/app.js"></script>
   <script src="app/controllers/controllers.js"></script>
   <script src="app/controllers/meals/MealsCtrl.js"></script>
+  <script src="app/services/mealsService.js"></script>
   
 </body>			
 </html>

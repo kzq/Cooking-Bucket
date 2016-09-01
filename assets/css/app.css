@@ -7,13 +7,12 @@
 .card {
     background-color:#efefef;
     border: 1px solid black;
-    height:75px;
     width: 225px;
     margin-bottom: 20px;
 }
 
 .cardHeader {
-    background-color: #006dcc;
+    background-color: #770367;
     font-size:14pt;
     color:white;
     padding:5px;
@@ -68,4 +67,10 @@
 /* Bootstrap overrides */
 body {
     padding-top: 50px;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #770367 !important;
+}
+.btn-primary:hover {
+    background-color: #90027C !important;
 }

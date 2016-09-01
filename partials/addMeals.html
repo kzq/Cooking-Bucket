@@ -1,0 +1,28 @@
+<div ng-controller="MealsCtrl">
+ <header>
+      <h1><b>Add meal</b> <small>breakfast, lunch, dinner</small></h1>
+ </header>
+    <div class="row">
+      <div class="col-md-3">
+        Dish Name:
+        <br />
+        <input data-ng-model="newMeal.name" type="text" placeholder="Name">
+      </div>
+      <div class="col-md-3">
+        Type:
+        <br />
+        <select data-ng-model="newMeal.type">
+          <option ng-repeat="type in mealTypes">{{type}}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        Day:
+        <br />
+        <select data-ng-model="newMeal.day">
+          <option ng-repeat="day in days">{{day}}</option>
+        </select>
+        <button id="submitMeal" class="btn btn-primary" type="button" data-ng-disabled="!newMeal.name || !newMeal.type || !newMeal.day" data-ng-click="addMeal()">
+            Add Meal
+        </button>
+      </div>
+</div>    
